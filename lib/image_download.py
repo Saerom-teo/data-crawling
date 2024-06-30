@@ -30,8 +30,12 @@ def image_download(image_elements: List[WebElement], content_type: str, download
                 image_response = requests.get(image_url, headers=headers, timeout=10)
                 image = Image.open(BytesIO(image_response.content))
 
+                # Convert image to RGB (necessary for saving as JPEG)
+                if image.mode in ("RGBA", "P"):
+                    image = image.convert("RGB")
+
                 image_path = os.path.join(download_dir, f'{content_type}_{idx}.jpg')
-                image.save(image_path)
+                image.save(image_path, "JPEG")
                 image_count += 1
                 image_paths.append(image_path)
 
