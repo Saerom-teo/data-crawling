@@ -1,0 +1,23 @@
+# datas
+datas/
+datasets/
+recyclables_origin/
+test/
+model_results/
+
+# static
+static/
+
+# results
+runs/
+
+# etc
+__pycache__/
+
+# files
+*.jpg
+*.jpeg
+*.png
+
+# security
+*.env
