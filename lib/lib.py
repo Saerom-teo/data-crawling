@@ -4,10 +4,10 @@ import re
 
 
 def recreate_directory(directory_path):
-    if os.path.exists(directory_path):
-        shutil.rmtree(directory_path)
-    
-    os.makedirs(directory_path)
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
+    existing_folders = [name for name in os.listdir(directory_path) if os.path.isdir(os.path.join(directory_path, name))]
+    return existing_folders
 
 def extract_number(price_str):
     # 정규 표현식을 사용하여 숫자만 추출

@@ -16,7 +16,10 @@ options.add_argument("--remote-debugging-port=9222")
 driver = webdriver.Chrome(options=options)
 
 try:
-    url = 'https://m.morestore.co.kr/supply/index.html?supplier_code=S00000DO'
+    # url = 'https://m.morestore.co.kr/supply/index.html?supplier_code=S00000DO'
+    # url = 'https://m.morestore.co.kr/product/list_thumb.html?cate_no=130'
+    url = 'https://morestore.co.kr/category/%EC%9D%98%EB%A5%98/128/'
+
     driver.get(url)
 
     process(driver)

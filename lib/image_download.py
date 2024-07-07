@@ -74,6 +74,7 @@ def combine_images_vertically(image_paths: List[str], output_path: str='detailIm
 
         combined_image.save(image_path)
         print(f"Combined image saved to: {image_path}")
+        return image_path
     except OSError as e:
         print(f"Failed to save combined image due to OSError: {e}")
     except Exception as e:
